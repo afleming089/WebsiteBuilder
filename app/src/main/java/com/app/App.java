@@ -1,3 +1,4 @@
+// docs https://docs.oracle.com/javase/8/javafx/api/toc.htm
 package com.app;
 
 import javafx.application.Application;
@@ -21,9 +22,14 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
-        stage.setScene(scene);
-        stage.show();
+        try {
+            scene = new Scene(loadFXML("editor"), 640, 480);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     static void setRoot(String fxml) throws IOException {
