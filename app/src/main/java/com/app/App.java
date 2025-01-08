@@ -22,6 +22,8 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        stage.setTitle("Website Builder");
+
         try {
             scene = new Scene(loadFXML("editor"), 640, 480);
             stage.setScene(scene);
